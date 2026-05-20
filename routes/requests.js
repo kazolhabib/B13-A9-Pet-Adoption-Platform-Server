@@ -61,7 +61,7 @@ router.post("/", verifyToken, async (req, res) => {
   }
 });
 
-// GET user's own requests (Private)
+// GET user's own requests
 router.get("/my-requests", verifyToken, async (req, res) => {
   try {
     const requests = await AdoptionRequest.find({ requesterEmail: req.user.email }).sort({ createdAt: -1 });
