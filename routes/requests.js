@@ -71,7 +71,7 @@ router.get("/my-requests", verifyToken, async (req, res) => {
   }
 });
 
-// GET all requests received by current user (pet owner) (Private)
+// GET all requests received by current user (Private)
 router.get("/received", verifyToken, async (req, res) => {
   try {
     const requests = await AdoptionRequest.find({ ownerEmail: req.user.email }).sort({ createdAt: -1 });
@@ -95,7 +95,7 @@ router.get("/owner-listings/:petId", verifyToken, async (req, res) => {
   }
 });
 
-// PATCH approve a request (Private) — auto-rejects others + marks pet adopted
+// PATCH approve a request — auto-rejects others + marks pet adopted
 router.patch("/:id/approve", verifyToken, async (req, res) => {
   try {
     const request = await AdoptionRequest.findById(req.params.id);
