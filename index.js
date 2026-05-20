@@ -2,18 +2,25 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const cookieParser = require("cookie-parser");
 
 const authRoutes = require("./routes/auth");
 const petRoutes = require("./routes/pets");
 const requestRoutes = require("./routes/requests");
 
+// const uri = "mongodb+srv://kazollhabibb_db_user:<db_password>@cluster0.pv9fbcf.mongodb.net/?appName=Cluster0";
+
 const app = express();
 
-// Middleware
+// CORS Configuration — read allowed origins from env
+const allowedOrigins = process.env.CLIENT_URL
+  ? process.env.CLIENT_URL.split(",").map(s => s.trim())
+  : ["http://localhost:3000", "http://localhost:5173"];
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173", "https://your-production-url.web.app"], // Update with live client URLs
+    origin: allowedOrigins,
     credentials: true,
   })
 );
