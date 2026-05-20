@@ -7,7 +7,7 @@ const router = express.Router();
 // POST submit a request (Private)
 router.post("/", verifyToken, async (req, res) => {
   try {
-    // Force requester details from token to prevent spoofing
+    
     const requestData = {
       ...req.body,
       requesterEmail: req.user.email,
