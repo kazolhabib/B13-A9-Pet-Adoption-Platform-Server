@@ -4,7 +4,7 @@ const verifyToken = require("../middleware/verifyToken");
 
 const router = express.Router();
 
-// POST submit a request (Private)
+// POST submit a request
 router.post("/", verifyToken, async (req, res) => {
   try {
     
