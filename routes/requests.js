@@ -184,7 +184,7 @@ router.patch("/:id", verifyToken, async (req, res) => {
   }
 });
 
-// DELETE a request (Cancel Request)
+// DELETE a request
 router.delete("/:id", verifyToken, async (req, res) => {
   try {
     const request = await AdoptionRequest.findById(req.params.id);
