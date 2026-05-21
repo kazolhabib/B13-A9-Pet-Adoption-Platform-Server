@@ -4,7 +4,7 @@ const verifyToken = require("../middleware/verifyToken");
 
 const router = express.Router();
 
-// GET all available pets (Public) - with Advanced Filtering & Searching
+// GET all available pet (Public) - with Advanced Filtering & Searching
 router.get("/", async (req, res) => {
   try {
     const { search, species, sort } = req.query;
