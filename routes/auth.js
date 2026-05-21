@@ -58,12 +58,13 @@ router.post("/register", async (req, res) => {
     });
 
     await newUser.save();
-    generateTokenAndCookie(newUser, res);
+    const token = generateTokenAndCookie(newUser, res);
 
     res.status(201).json({
       success: true,
       message: "User registered successfully",
       user: sanitizeUser(newUser),
+      token,
     });
   } catch (error) {
     console.error("Register Error:", error);
@@ -90,12 +91,13 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ success: false, message: "Invalid email or password" });
     }
 
-    generateTokenAndCookie(user, res);
+    const token = generateTokenAndCookie(user, res);
 
     res.status(200).json({
       success: true,
       message: "Logged in successfully",
       user: sanitizeUser(user),
+      token,
     });
   } catch (error) {
     console.error("Login Error:", error);
@@ -140,12 +142,13 @@ router.post("/auth/google", async (req, res) => {
       }
     }
 
-    generateTokenAndCookie(user, res);
+    const token = generateTokenAndCookie(user, res);
 
     res.status(200).json({
       success: true,
       message: "Google sign-in successful",
       user: sanitizeUser(user),
+      token,
     });
   } catch (error) {
     console.error("Google Auth Error:", error);
