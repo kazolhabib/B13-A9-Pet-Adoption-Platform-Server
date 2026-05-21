@@ -144,7 +144,7 @@ const samplePets = [
     breed: "Mini Rex",
     age: "4 months",
     gender: "Male",
-    imageUrl: "https://images.unsplash.com/photo-1535241749838-299277c6fc53?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1518796745738-41048802f99a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     healthStatus: "Healthy",
     vaccinationStatus: "Not Vaccinated",
     location: "Mymensingh, Bangladesh",
