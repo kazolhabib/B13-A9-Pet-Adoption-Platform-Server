@@ -4,7 +4,7 @@
 PetHaven is a comprehensive pet adoption platform built to connect loving families with animals in need. The backend system serves as the secure, high-performance foundation of the platform. It handles authentication, data management, advanced querying for pet listings, and adoption request lifecycle management.
 
 ## Live URL
-[https://your-server-url.vercel.app](https://your-server-url.vercel.app)
+[https://b13-a9-pet-adoption-platform-server.onrender.com/](https://b13-a9-pet-adoption-platform-server.onrender.com/)
 
 ## Features
 - **Secure JWT Authentication**: Generates JSON Web Tokens securely stored in HTTPOnly cookies for seamless, protected route access.
